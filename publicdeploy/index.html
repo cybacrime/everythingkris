@@ -19,7 +19,7 @@
 
 
   <div class="viewport">
-    <a href="https://zinebonanza.neocities.org"><img class="ad" src="/images/zb_ad.gif" width="50%" id="zb_ad"></a>
+    <a href="https://zinebonanza.neocities.org" class="ad"><img src="/images/zb_ad.gif" id="zb_ad"></a>
     <div class="everything">
       
       <div class="aside">
@@ -99,6 +99,8 @@
             Jank code FTW 鬼神 Fugitive Lost I love making stuff! I love neocities and the free web:) hello github</p>
 
             <!-- Update links with onclick event -->
+             </div>
+          <div class="iframebuttons">
                 <a href="javascript:void(0);" onclick="changeIframe('/home')"><img src="linkbuttons/home.gif"></img></a><br>
                 <a href="javascript:void(0);" onclick="changeIframe('/log')"><img src="linkbuttons/log.gif"></a><br>
                 <a href="javascript:void(0);" onclick="changeIframe('/rabbithole')"><img src="linkbuttons/rabbithole.gif"></a><br>
@@ -126,18 +128,19 @@
         </div>
       </div>
         <div class="main">
-      <iframe name="main_iframe" src="/home.html" id="home"></iframe>
-      <script>
-        function changeIframe(src, targetId) {
-          targetId = targetId || 'home';
-          var iframe = document.getElementById(targetId);
-          if (!iframe) {
-            console.warn('changeIframe: iframe with id "' + targetId + '" not found');
-            return;
-          }
-          iframe.src = src;
-        }
-      </script>
+          <div class="navbar"><img src="dividers/homeheader.gif" class="navbar"></div>
+          <iframe name="main_iframe" src="/home.html" id="home"></iframe>
+          <script>
+            function changeIframe(src, targetId) {
+              targetId = targetId || 'home';
+              var iframe = document.getElementById(targetId);
+              if (!iframe) {
+                console.warn('changeIframe: iframe with id "' + targetId + '" not found');
+                return;
+              }
+              iframe.src = src;
+            }
+          </script>
         </div>
     </div>
      <div class="footer">
@@ -151,7 +154,6 @@
       <a href="https://everythingkris.neocities.org" target="_blank"><div class="button"><img src="/buttons/everythingkris_button.gif"></div></a>
     </div>
     <a href=https://copyheart.org/manifesto>♡Copying is an act of love.</a>
-    <button onclick="darkMode()">Toggle dark mode</button>
 
   </div>
 </body>

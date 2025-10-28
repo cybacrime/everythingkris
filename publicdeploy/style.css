@@ -2,13 +2,15 @@
    Root & Global Styles
 =============================== */
 :root {
-  --gap: .2rem;
+  --gap: .1rem;
   --background: rgb(239, 239, 239);
-  --darkBackground: rgb(46, 45, 47);
+  --border: 2px solid white;
+  --borderstyle: outset;
+  --innerborderstyle: inset;
 }
 
 body {
-  font-size: .7em;
+  font-size: 8pt;
   color: black;
   font-family: "Verdana", sans-serif;
   background-color: var(--background);
@@ -32,45 +34,58 @@ img {
   width: 100%;
 }
 
-.ad {
-  display: block;
-  width: 40vw;
-  margin-bottom: 3px;
-  border: 3px solid white;
-  border-style: groove;
-}
 
 /* ===============================
    Layout Containers
 =============================== */
 .viewport {
   display: flex;
+  flex-grow: 1;
   flex-direction: inherit;
   justify-content: center;
   align-items: center;
-  padding: 10px;
   min-height: 100vh;
-  border: 0px solid red;
+  max-width: 35vw;
+}
+
+
+.ad {
+  display: block;
+  max-width: inherit;
+  border: var(--border);
+  border-style:outset;
+}
+
+#zb_ad {
+  min-height: 100%;
 }
 
 .everything {
   display: flex;
-  flex-direction: row; /* Horizontal arrangement */
-  border: 1px solid white;
-  border-style: groove;
-  border-width: 3px;
-  max-width: 40vw;
+  flex-direction: row;
+  border: var(--border);
+  border-style: var(--borderstyle);
+  max-width: 100%;
   min-height: 80vh;
 }
 
 .main {
+  display: flex;
+  flex-direction: column;
   flex: 3;
   margin: var(--gap);
   margin-left: 0;
   word-wrap: break-word;
-  border: 2px;
-  border-style: inset;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
 }
+
+.navbar {
+  width: 100%;
+  border: none;
+}
+
 
 /* ===============================
    Aside Section
@@ -87,7 +102,8 @@ img {
   display: flex;
   margin: var(--gap);
   margin-bottom: 0;
-  border: 2px inset;
+  border: var(--border);
+  border-style: var(--innerborderstyle);
   background-color: black;
 }
 
@@ -96,22 +112,30 @@ img {
   flex-direction: column;
   flex: 90%;
   margin: var(--gap);
-  border: 2px inset;
   background-color: white;
 }
 
 .aside_content .text {
-  padding: 5px;
+  padding: 0.3rem;
   overflow-wrap: break-word;
   word-break: break-word;
+  border: var(--border);
+  border-style: var(--innerborderstyle);
+}
+
+.aside_content .iframebuttons {
+  padding: 0;
+  width: 100%;
 }
 
 .aside_footer {
-  padding: 5px;
+  padding: 3px 3px 0px 3px;
+  font-size: 0.6vw;
+  font-weight: bold;
   align-items: center;
   display: flex;
   flex-direction: column;
-  background-color: #CCC;
+  background-color: var(--background);
 }
 
 /* Hide scrollbar in webkit browsers */
@@ -126,9 +150,8 @@ img {
   display: flex;
   justify-content: center;
   gap: var(--gap);
-  max-width: 40vw;
+  max-width: 100%;
   padding: 5px;
-  border: 0px solid pink;
 }
 
 .footer .button {
@@ -144,28 +167,14 @@ img {
    Chat / Player Elements
 =============================== */
 .chatbox {
+  border: var(--border);
+  border-style: var(--innerborderstyle);
   flex-grow: 1;
   padding-top: 5px;
 }
 
 .player {
   display: grid;
-}
-
-.player-display {
-  position: absolute;
-  justify-self: center;
-  align-self: center;
-  height: 45px;
-  width: 110px;
-  margin-bottom: 100px;
-  align-content: center;
-}
-
-.calcu_player {
-  position: relative;
-  margin-left: 30px;
-  width: 15%;
 }
 
 /* ===============================
@@ -227,26 +236,8 @@ img {
 #home {
   width: 100%;
   height: 100%;
-  border: none;
-}
-
-/* ===============================
-   Dark mode shit
-=============================== */
-
-.darkMode {
-  background-color: var(--darkBackground);
-}
-
-.everything.darkMode {
-  border: 2px solid grey;
-}
-
-.aside.darkMode {
-  background-color: var(--darkBackground);
-  border: 10px solid black;
-}
-
-#zb_ad.darkMode {
-  border: 2px solid grey;
+  border: var(--border);
+  border-style: var(--innerborderstyle);
+  flex: 1;
+  min-height: 0;
 }
