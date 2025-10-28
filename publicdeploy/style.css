@@ -66,25 +66,26 @@ img {
   border: var(--border);
   border-style: var(--borderstyle);
   max-width: 100%;
-  min-height: 80vh;
+  height: 80vh;
+  overflow: hidden;
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
   flex: 3;
   margin: var(--gap);
   margin-left: 0;
   word-wrap: break-word;
-  height: 100%;
   min-height: 0;
   overflow: hidden;
+  gap: var(--gap);
 }
 
 .navbar {
   width: 100%;
   border: none;
+  margin-left: 0;
 }
+
 
 
 /* ===============================
@@ -239,5 +240,5 @@ img {
   border: var(--border);
   border-style: var(--innerborderstyle);
   flex: 1;
-  min-height: 0;
+  display: block;
 }
