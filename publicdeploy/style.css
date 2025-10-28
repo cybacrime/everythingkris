@@ -2,19 +2,13 @@
 Root & Global Styles
 =============================== */
 :root {
-  --gap: .2rem;
-  --background: white;
-  --backgroundsecondary: rgb(239, 239, 239);
-  --border: 3px solid white;
-  --textcolor: black;
-}
-
-.darkmode {
-  --background: rgb(59, 55, 68);
-  --backgroundsecondary: rgb(18, 17, 20);
-  --border: 3px solid rgb(69, 62, 99);
-  --textcolor: white;
-  
+  --gap: 0rem;
+  --background: linear-gradient(0deg, rgba(255, 148, 196, 1) 0%, rgba(189, 11, 62, 1) 50%, rgba(0, 0, 0, 1) 100%);
+  --innerbackground:  rgb(71, 70, 71);
+  --viewportbackground: rgb(176, 171, 177);
+  --border: 1px solid gray;
+  --innerborder: 2px inset;
+  --textcolor: rgb(255, 255, 255);
 }
 
 /* ===============================
@@ -25,7 +19,7 @@ body {
   font-size: .7em;
   color: var(--textcolor);
   font-family: "Verdana", sans-serif;
-  background-color: var(--backgroundsecondary);
+  background-image: var(--background);
   background-repeat: repeat;
   margin: 0;
   display: flex;
@@ -49,7 +43,7 @@ img {
 .ad {
   display: block;
   width: 40vw;
-  margin-bottom: 3px;
+  margin-bottom: 0px;
   border: var(--border);
   border-style: groove;
 }
@@ -62,11 +56,12 @@ img {
   flex-direction: inherit;
   justify-content: center;
   align-items: center;
-  padding: 10px;
   min-height: 100vh;
+  background-color: var(--viewportbackground);
 }
 
 .everything {
+  flex-grow: 1;
   display: flex;
   flex-direction: row; /* Horizontal arrangement */
   border: var(--border);
@@ -80,8 +75,8 @@ img {
   margin: var(--gap);
   margin-left: 0;
   word-wrap: break-word;
-  border: 2px;
-  border-style: inset;
+  border: var(--border);
+  border-style: var(--innerborder);
 }
 
 /* ===============================
@@ -99,7 +94,8 @@ img {
   display: flex;
   margin: var(--gap);
   margin-bottom: 0;
-  border: 2px inset;
+  border: var(--border);
+  border-style: var(--innerborder);
   background-color: black;
 }
 
@@ -110,7 +106,7 @@ img {
   margin: var(--gap);
   border: var(--border);
   border-style: inset;
-  background-color: var(--background);
+  background-color: var(--innerbackground);
 }
 
 .aside_content .text {
@@ -140,7 +136,7 @@ img {
   justify-content: center;
   gap: var(--gap);
   max-width: 40vw;
-  padding: 5px;;
+  padding: 0px;;
   color: var(--textcolor);
 }
 
@@ -154,33 +150,12 @@ img {
 }
 
 /* ===============================
-   Chat / Player Elements
+   Chat Elements
 =============================== */
 .chatbox {
   flex-grow: 1;
   padding-top: 5px;
 }
-
-.player {
-  display: grid;
-}
-
-.player-display {
-  position: absolute;
-  justify-self: center;
-  align-self: center;
-  height: 45px;
-  width: 110px;
-  margin-bottom: 100px;
-  align-content: center;
-}
-
-.calcu_player {
-  position: relative;
-  margin-left: 30px;
-  width: 15%;
-}
-
 /* ===============================
    Links
 =============================== */

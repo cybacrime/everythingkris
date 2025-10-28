@@ -1,9 +1,13 @@
-/* Document customization */
+:root {
+  --innerbackground: rgb(71, 70, 71);
+  --textcolor: white;
+}
+
 body {
   font-family: "verdana", sans-serif;
-  background-color: white;
+  background:  var(--innerbackground);
   font-size: .7em;
-  color: rgb(0, 0, 0);
+  color: var(--textcolor);
   background-repeat: repeat;
   margin: 10px;
 }
