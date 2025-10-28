@@ -1,13 +1,9 @@
-:root {
-  --innerbackground: rgb(71, 70, 71);
-  --textcolor: white;
-}
-
+/* Document customization */
 body {
   font-family: "verdana", sans-serif;
-  background:  var(--innerbackground);
+  background-color: white;
   font-size: .7em;
-  color: var(--textcolor);
+  color: rgb(0, 0, 0);
   background-repeat: repeat;
   margin: 10px;
 }
@@ -31,7 +27,7 @@ date {
 }
   
 a {
-  color: rgb(21,186,246); /* Ctest */
+  color: rgb(21,186,246); /* Change the color to your preferred color */
   text-decoration: none; /* Remove underlines from links */
 }
 
