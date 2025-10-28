@@ -1,23 +1,31 @@
 /* ===============================
-   Root & Global Styles
+Root & Global Styles
 =============================== */
 :root {
-  --gap: .2rem;
-  --background: rgb(239, 239, 239);
-  --darkBackground: rgb(46, 45, 47);
+  --gap: 0rem;
+  --background: linear-gradient(0deg, rgba(255, 148, 196, 1) 0%, rgba(189, 11, 62, 1) 50%, rgba(0, 0, 0, 1) 100%);
+  --innerbackground:  rgb(71, 70, 71);
+  --viewportbackground: rgb(176, 171, 177);
+  --border: 1px solid gray;
+  --innerborder: 2px inset;
+  --textcolor: rgb(255, 255, 255);
 }
+
+/* ===============================
+ok document heere
+=============================== */
 
 body {
   font-size: .7em;
-  color: black;
+  color: var(--textcolor);
   font-family: "Verdana", sans-serif;
-  background-color: var(--background);
+  background-image: var(--background);
   background-repeat: repeat;
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Center content vertically */
+  justify-content: center;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -35,8 +43,8 @@ img {
 .ad {
   display: block;
   width: 40vw;
-  margin-bottom: 3px;
-  border: 3px solid white;
+  margin-bottom: 0px;
+  border: var(--border);
   border-style: groove;
 }
 
@@ -48,17 +56,16 @@ img {
   flex-direction: inherit;
   justify-content: center;
   align-items: center;
-  padding: 10px;
   min-height: 100vh;
-  border: 0px solid red;
+  background-color: var(--viewportbackground);
 }
 
 .everything {
+  flex-grow: 1;
   display: flex;
   flex-direction: row; /* Horizontal arrangement */
-  border: 1px solid white;
+  border: var(--border);
   border-style: groove;
-  border-width: 3px;
   max-width: 40vw;
   min-height: 80vh;
 }
@@ -68,8 +75,8 @@ img {
   margin: var(--gap);
   margin-left: 0;
   word-wrap: break-word;
-  border: 2px;
-  border-style: inset;
+  border: var(--border);
+  border-style: var(--innerborder);
 }
 
 /* ===============================
@@ -87,7 +94,8 @@ img {
   display: flex;
   margin: var(--gap);
   margin-bottom: 0;
-  border: 2px inset;
+  border: var(--border);
+  border-style: var(--innerborder);
   background-color: black;
 }
 
@@ -96,8 +104,9 @@ img {
   flex-direction: column;
   flex: 90%;
   margin: var(--gap);
-  border: 2px inset;
-  background-color: white;
+  border: var(--border);
+  border-style: inset;
+  background-color: var(--innerbackground);
 }
 
 .aside_content .text {
@@ -127,8 +136,8 @@ img {
   justify-content: center;
   gap: var(--gap);
   max-width: 40vw;
-  padding: 5px;
-  border: 0px solid pink;
+  padding: 0px;;
+  color: var(--textcolor);
 }
 
 .footer .button {
@@ -141,33 +150,12 @@ img {
 }
 
 /* ===============================
-   Chat / Player Elements
+   Chat Elements
 =============================== */
 .chatbox {
   flex-grow: 1;
   padding-top: 5px;
 }
-
-.player {
-  display: grid;
-}
-
-.player-display {
-  position: absolute;
-  justify-self: center;
-  align-self: center;
-  height: 45px;
-  width: 110px;
-  margin-bottom: 100px;
-  align-content: center;
-}
-
-.calcu_player {
-  position: relative;
-  margin-left: 30px;
-  width: 15%;
-}
-
 /* ===============================
    Links
 =============================== */
@@ -175,21 +163,6 @@ img {
   color: rgb(21, 186, 246);
   text-decoration: none;
   vertical-align: middle;
-}
-
-/* ===============================
-   Boxes & Borders
-=============================== */
-.box {
-  margin: 5px;
-  padding: 5px;
-  border: 0px solid yellow;
-  word-wrap: break-word;
-}
-
-.dotted {
-  margin-top: 8px;
-  border-top: 3px dotted white;
 }
 
 /* ===============================
@@ -228,25 +201,4 @@ img {
   width: 100%;
   height: 100%;
   border: none;
-}
-
-/* ===============================
-   Dark mode shit
-=============================== */
-
-.darkMode {
-  background-color: var(--darkBackground);
-}
-
-.everything.darkMode {
-  border: 2px solid grey;
-}
-
-.aside.darkMode {
-  background-color: var(--darkBackground);
-  border: 10px solid black;
-}
-
-#zb_ad.darkMode {
-  border: 2px solid grey;
 }
