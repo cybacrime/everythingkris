@@ -1,23 +1,37 @@
 /* ===============================
-   Root & Global Styles
+Root & Global Styles
 =============================== */
 :root {
   --gap: .2rem;
-  --background: rgb(239, 239, 239);
-  --darkBackground: rgb(46, 45, 47);
+  --background: white;
+  --backgroundsecondary: rgb(239, 239, 239);
+  --border: 3px solid white;
+  --textcolor: black;
 }
+
+.darkmode {
+  --background: rgb(59, 55, 68);
+  --backgroundsecondary: rgb(18, 17, 20);
+  --border: 3px solid rgb(69, 62, 99);
+  --textcolor: white;
+  
+}
+
+/* ===============================
+ok document heere
+=============================== */
 
 body {
   font-size: .7em;
-  color: black;
+  color: var(--textcolor);
   font-family: "Verdana", sans-serif;
-  background-color: var(--background);
+  background-color: var(--backgroundsecondary);
   background-repeat: repeat;
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Center content vertically */
+  justify-content: center;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -36,7 +50,7 @@ img {
   display: block;
   width: 40vw;
   margin-bottom: 3px;
-  border: 3px solid white;
+  border: var(--border);
   border-style: groove;
 }
 
@@ -50,15 +64,13 @@ img {
   align-items: center;
   padding: 10px;
   min-height: 100vh;
-  border: 0px solid red;
 }
 
 .everything {
   display: flex;
   flex-direction: row; /* Horizontal arrangement */
-  border: 1px solid white;
+  border: var(--border);
   border-style: groove;
-  border-width: 3px;
   max-width: 40vw;
   min-height: 80vh;
 }
@@ -96,8 +108,9 @@ img {
   flex-direction: column;
   flex: 90%;
   margin: var(--gap);
-  border: 2px inset;
-  background-color: white;
+  border: var(--border);
+  border-style: inset;
+  background-color: var(--background);
 }
 
 .aside_content .text {
@@ -127,8 +140,8 @@ img {
   justify-content: center;
   gap: var(--gap);
   max-width: 40vw;
-  padding: 5px;
-  border: 0px solid pink;
+  padding: 5px;;
+  color: var(--textcolor);
 }
 
 .footer .button {
@@ -178,21 +191,6 @@ img {
 }
 
 /* ===============================
-   Boxes & Borders
-=============================== */
-.box {
-  margin: 5px;
-  padding: 5px;
-  border: 0px solid yellow;
-  word-wrap: break-word;
-}
-
-.dotted {
-  margin-top: 8px;
-  border-top: 3px dotted white;
-}
-
-/* ===============================
    Marquee
 =============================== */
 .marquee {
@@ -228,25 +226,4 @@ img {
   width: 100%;
   height: 100%;
   border: none;
-}
-
-/* ===============================
-   Dark mode shit
-=============================== */
-
-.darkMode {
-  background-color: var(--darkBackground);
-}
-
-.everything.darkMode {
-  border: 2px solid grey;
-}
-
-.aside.darkMode {
-  background-color: var(--darkBackground);
-  border: 10px solid black;
-}
-
-#zb_ad.darkMode {
-  border: 2px solid grey;
 }
