@@ -1,0 +1,252 @@
+/* ===============================
+   Root & Global Styles
+=============================== */
+:root {
+  --gap: .2rem;
+  --background: rgb(239, 239, 239);
+  --darkBackground: rgb(46, 45, 47);
+}
+
+body {
+  font-size: .7em;
+  color: black;
+  font-family: "Verdana", sans-serif;
+  background-color: var(--background);
+  background-repeat: repeat;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+}
+
+.ad {
+  display: block;
+  width: 40vw;
+  margin-bottom: 3px;
+  border: 3px solid white;
+  border-style: groove;
+}
+
+/* ===============================
+   Layout Containers
+=============================== */
+.viewport {
+  display: flex;
+  flex-direction: inherit;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  min-height: 100vh;
+  border: 0px solid red;
+}
+
+.everything {
+  display: flex;
+  flex-direction: row; /* Horizontal arrangement */
+  border: 1px solid white;
+  border-style: groove;
+  border-width: 3px;
+  max-width: 40vw;
+  min-height: 80vh;
+}
+
+.main {
+  flex: 3;
+  margin: var(--gap);
+  margin-left: 0;
+  word-wrap: break-word;
+  border: 2px;
+  border-style: inset;
+}
+
+/* ===============================
+   Aside Section
+=============================== */
+.aside {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: calc(100% / 3);
+  overflow-y: scroll;
+}
+
+.aside_header {
+  display: flex;
+  margin: var(--gap);
+  margin-bottom: 0;
+  border: 2px inset;
+  background-color: black;
+}
+
+.aside_content {
+  display: flex;
+  flex-direction: column;
+  flex: 90%;
+  margin: var(--gap);
+  border: 2px inset;
+  background-color: white;
+}
+
+.aside_content .text {
+  padding: 5px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.aside_footer {
+  padding: 5px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #CCC;
+}
+
+/* Hide scrollbar in webkit browsers */
+.body::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===============================
+   Footer
+=============================== */
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: var(--gap);
+  max-width: 40vw;
+  padding: 5px;
+  border: 0px solid pink;
+}
+
+.footer .button {
+  width: fit-content;
+  transition: 0.2s ease-in-out;
+}
+
+.footer .button:hover {
+  transform: scale(105%);
+}
+
+/* ===============================
+   Chat / Player Elements
+=============================== */
+.chatbox {
+  flex-grow: 1;
+  padding-top: 5px;
+}
+
+.player {
+  display: grid;
+}
+
+.player-display {
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  height: 45px;
+  width: 110px;
+  margin-bottom: 100px;
+  align-content: center;
+}
+
+.calcu_player {
+  position: relative;
+  margin-left: 30px;
+  width: 15%;
+}
+
+/* ===============================
+   Links
+=============================== */
+.everything a {
+  color: rgb(21, 186, 246);
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+/* ===============================
+   Boxes & Borders
+=============================== */
+.box {
+  margin: 5px;
+  padding: 5px;
+  border: 0px solid yellow;
+  word-wrap: break-word;
+}
+
+.dotted {
+  margin-top: 8px;
+  border-top: 3px dotted white;
+}
+
+/* ===============================
+   Marquee
+=============================== */
+.marquee {
+  margin: 0;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  width: 100%;
+}
+
+.marquee__content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  animation: scroll 60s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100%));
+  }
+}
+
+/* ===============================
+   Home Iframe
+=============================== */
+#home {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ===============================
+   Dark mode shit
+=============================== */
+
+.darkMode {
+  background-color: var(--darkBackground);
+}
+
+.everything.darkMode {
+  border: 2px solid grey;
+}
+
+.aside.darkMode {
+  background-color: var(--darkBackground);
+  border: 10px solid black;
+}
+
+#zb_ad.darkMode {
+  border: 2px solid grey;
+}
