@@ -1,16 +1,21 @@
-/* Document customization */
+#document {
+  width: 100%;
+}
+  
 body {
   font-family: "verdana", sans-serif;
   background-color: white;
   font-size: .7em;
   color: rgb(0, 0, 0);
   background-repeat: repeat;
-  margin: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 body::-webkit-scrollbar {
   display: none;
 }
+
 
 img {
   width: 100%;
@@ -63,4 +68,8 @@ a {
   column-count: 2;
   column-gap: 15px;
   text-align: justify;
+}
+
+.frontpage .article {
+  margin: 10px;
 }

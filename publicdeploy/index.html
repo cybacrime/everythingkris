@@ -103,13 +103,13 @@
         <div class="asideL_content">
           <div class="text">
           <img src="images/minikris.png">
-            <b>KRIS</b>
-            Jank code FTW 鬼神 Fugitive Lost I love making stuff! I love neocities and the free web:) 500th commit of the day lol!</p>
+            <b>KRIS</b> / <b>ZINEKID</b>
+            <br>Jank code FTW 鬼神 Fugitive Lost I love making stuff! I love neocities and the free web:) 500th commit of the day lol
 
             <!-- Update links with onclick event -->
           </div>
           <div class="addition_space">
-            <img src="additions/bannermlm.gif">
+            <img src="additions/amazon2.gif">
           </div>
           <div class="chatbox">
             <iframe
@@ -133,14 +133,15 @@
         <div class="main">
           <div class="iframebuttons">
                 <a href="javascript:void(0);" onclick="changeIframe('/home')"><img src="linkbuttons/headlines.gif"></img></a>
-                <a href="javascript:void(0);" onclick="changeIframe('/log')"><img src="linkbuttons/headlines.gif"></a>
-                <a href="javascript:void(0);" onclick="changeIframe('/rabbithole')"><img src="linkbuttons/headlines.gif"></a>
+                <a href="javascript:void(0);" onclick="changeIframe('/log')"><img src="linkbuttons/log.gif"></a>
+                <a href="javascript:void(0);" onclick="changeIframe('/rabbithole')"><img src="linkbuttons/rabbithole.gif"></a>
             <!-- Add more links as needed -->
           </div>
-          <iframe name="main_iframe" src="/home.html" id="home" class="iframe"></iframe>
+          <div class="main_iframe">
+          <iframe name="main_iframe" src="/home.html" id="headlines" class="iframe"></iframe>
           <script>
             function changeIframe(src, targetId) {
-              targetId = targetId || 'home';
+              targetId = targetId || 'headlines';
               var iframe = document.getElementById(targetId);
               if (!iframe) {
                 console.warn('changeIframe: iframe with id "' + targetId + '" not found');
@@ -149,6 +150,7 @@
               iframe.src = src;
             }
           </script>
+          </div>
         </div>
         <div class="asideR">
           <a href="https://info.flagcounter.com/dugR"><img src="https://s01.flagcounter.com/count2/dugR/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_1/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
