@@ -7,6 +7,7 @@
   --innerborderstyle: inset;
   --mainbackground: rgb(219, 219, 219);
   --background: solid black;
+  --iframebuttonheight: 20px;
 }
 
 /* ========== Global ========== */
@@ -157,7 +158,7 @@ img {
   display: flex;
   flex-direction: row;
   padding: 0;
-  max-height: 20px;
+  max-height: var(--iframebuttonheight);
   gap: 3px;
 }
 
@@ -168,7 +169,7 @@ img {
 .main_iframe {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: calc(100% - var(--iframebuttonheight));
 }
 
 .asideL_footer {
@@ -185,6 +186,7 @@ img {
 .asideR {
   flex: 2;
 }
+
 
 /* ========== Footer ========== */
 .footer {

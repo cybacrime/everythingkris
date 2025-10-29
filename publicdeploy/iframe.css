@@ -16,6 +16,30 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.abody {
+  gap: 5px;
+}
+
+.abody .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.abody .header .title {
+  font-size: 1rem;
+  font-weight: bold;
+  align-content: baseline;
+}
+
+.abody .header .tag {
+  font-size: 0.7rem;
+  text-align: right;
+  align-self: baseline;
+}
+
 
 img {
   width: 100%;
@@ -28,7 +52,7 @@ name {
 }
 
 date {
-  color: #2e424a
+  color: #898989
 }
   
 a {
@@ -64,12 +88,17 @@ a {
   width: 100%;
 }
 
+.abody {
+  margin: 10px;
+}
+
 .article {
+  padding: 5px;
   column-count: 2;
   column-gap: 15px;
   text-align: justify;
 }
 
-.frontpage .article {
-  margin: 10px;
+h3 {
+  margin: 5px 0;
 }
