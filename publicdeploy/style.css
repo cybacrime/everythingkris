@@ -8,6 +8,7 @@
   --mainbackground: rgb(219, 219, 219);
   --background: solid black;
   --iframebuttonheight: 20px;
+  --secondarycolor: rgb(93, 170, 92);
 }
 
 /* ========== Global ========== */
@@ -152,7 +153,23 @@ img {
   word-break: break-word;
 }
 
+.soc {
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  overflow-wrap: anywhere;
+  transition: 0.1s ease-in-out;
+  padding-bottom: 3px;
+}
 
+.soc:hover {
+  filter: brightness(1.2);
+}
+
+.asideL_content .text .soc img {
+  width: 20px;
+  padding-right: 3px;
+}
 
 .main .iframebuttons {
   display: flex;
@@ -215,9 +232,14 @@ img {
 
 /* ========== Links ========== */
 .everything a {
-  color: rgb(21, 186, 246);
-  text-decoration: none;
+  color: var(--secondarycolor);
+  text-decoration: underline;
   vertical-align: middle;
+  transition: 0.2s ease-in-out;
+}
+
+a:hover {
+  filter: brightness(1.2)
 }
 
 /* ========== Marquee ========== */
@@ -261,4 +283,9 @@ img {
   position: fixed;
   width: 300px;
   transform: rotate(-20deg);
+}
+
+#flagcount {
+  background-color: var(--mainbackground);
+  height: 100%;
 }

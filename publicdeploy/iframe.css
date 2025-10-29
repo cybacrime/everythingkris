@@ -1,3 +1,6 @@
+:root {
+  --secondarycolor: rgb(93, 170, 92);
+}
 #document {
   width: 100%;
 }
@@ -16,11 +19,11 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-.abody {
-  gap: 5px;
+.article {
+  gap: 0px;
 }
 
-.abody .header {
+.article .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -28,13 +31,14 @@ body::-webkit-scrollbar {
   margin-bottom: 8px;
 }
 
-.abody .header .title {
+.article .header .title {
   font-size: 1rem;
   font-weight: bold;
   align-content: baseline;
 }
 
-.abody .header .tag {
+.article .header .tag {
+  color:#898989;
   font-size: 0.7rem;
   text-align: right;
   align-self: baseline;
@@ -56,8 +60,16 @@ date {
 }
   
 a {
-  color: rgb(21,186,246); /* Change the color to your preferred color */
-  text-decoration: none; /* Remove underlines from links */
+  color: var(--secondarycolor);
+  font-weight: bold;
+  text-decoration: underline;
+  vertical-align: middle;
+  transition: 0.2s ease-in-out;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  filter: brightness(1.2)
 }
 
 .box {
@@ -88,14 +100,12 @@ a {
   width: 100%;
 }
 
-.abody {
+.article {
   margin: 10px;
 }
 
-.article {
-  padding: 5px;
-  column-count: 2;
-  column-gap: 15px;
+.body {
+  padding: 5px 0;
   text-align: justify;
 }
 
