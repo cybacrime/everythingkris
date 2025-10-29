@@ -169,7 +169,6 @@ img {
   overflow-wrap: anywhere;
   padding: 3px;
   border: var(--border);
-  border-radius: 3px;
   border-style: var(--borderstyle);
 }
 
@@ -200,6 +199,10 @@ img {
 
 .iframebuttons img {
   max-height: 15px;
+}
+
+.iframebuttons img:active {
+  filter: brightness(0.9);
 }
 
 .main_iframe {
