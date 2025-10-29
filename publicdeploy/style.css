@@ -8,7 +8,7 @@
   --mainbackground: rgb(219, 219, 219);
   --background: solid black;
   --iframebuttonheight: 20px;
-  --secondarycolor: rgb(93, 170, 92);
+  --secondarycolor: rgb(15, 153, 0);
 }
 
 /* ========== Global ========== */
@@ -153,22 +153,41 @@ img {
   word-break: break-word;
 }
 
-.soc {
+
+.socbuttons {
   display: flex;
-  font-weight: bold;
+  flex-direction: column;
+  align-content: stretch;
+  background-color: var(--mainbackground);
+  gap: 1px;
+}
+
+.socbutton {
+  display: flex;
   align-items: center;
+  font-weight: bold;
   overflow-wrap: anywhere;
-  transition: 0.1s ease-in-out;
-  padding-bottom: 3px;
+  padding: 3px;
+  border: var(--border);
+  border-radius: 3px;
+  border-style: var(--borderstyle);
 }
 
-.soc:hover {
-  filter: brightness(1.2);
+.socbutton:hover {
+  background-color: rgb(222, 222, 222);
+  filter: brightness(1.1);
 }
 
-.asideL_content .text .soc img {
+.socbutton:active {
+  border-style: inset;
+  filter: brightness(0.9);
+}
+
+.asideL_content .socbuttons img {
   width: 20px;
   padding-right: 3px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .main .iframebuttons {
@@ -236,10 +255,6 @@ img {
   text-decoration: underline;
   vertical-align: middle;
   transition: 0.2s ease-in-out;
-}
-
-a:hover {
-  filter: brightness(1.2)
 }
 
 /* ========== Marquee ========== */
