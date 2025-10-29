@@ -53,14 +53,14 @@ img {
   max-width: var(--vpwidth);
 }
 
-.picture {
+.addition {
   display: flex;
   object-fit: fill;
   width: 100%;
   max-height: 5vh;
 }
 
-.picture_space {
+.addition_space {
   display: flex;
   flex-direction: column;
   background-color: var(--mainbackground);
@@ -87,7 +87,7 @@ img {
   border-right-style: var(--borderstyle);
 }
 
-#bottom_picture {
+#bottom_addition {
   width: var(--vpwidth);
   border: var(--border);
   border-style: var(--borderstyle);
