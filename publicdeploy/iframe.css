@@ -13,6 +13,8 @@ body {
   background-repeat: repeat;
   margin: 0;
   padding: 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 body::-webkit-scrollbar {

@@ -28,9 +28,11 @@ body {
   height: 100vh;
   margin: 0;
   overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.body::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
 }
 
@@ -64,6 +66,13 @@ img {
   display: flex;
   flex-direction: column;
   background-color: var(--mainbackground);
+}
+
+.addition_space .addition {
+  max-height: 100%;
+  width: calc(100% - 3px);
+  border: var(--border);
+  border-style: var(--innerborderstyle);
 }
 
 .top {
@@ -226,6 +235,20 @@ img {
   flex: 2;
 }
 
+.neighbors {
+  padding: 5px;
+}
+
+.neighborbuttons {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 5px;
+  row-gap: 3px;
+}
+
+.neighborbuttons img {
+  width: inherit;
+}
 
 /* ========== Footer ========== */
 .footer {
