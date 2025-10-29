@@ -1,28 +1,37 @@
-/* ===============================
-   Root & Global Styles
-=============================== */
+/* ========== Root ========== */
 :root {
   --gap: .1rem;
-  --background: linear-gradient(0deg,rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
-  --mainbackground: rgb(224, 224, 224);
-  --border: 2px solid rgb(199, 199, 199);
+  --vpwidth: 40vw;
+  --border: 2px rgb(207, 207, 207);
   --borderstyle: outset;
   --innerborderstyle: inset;
+  --mainbackground: rgb(219, 219, 219);
+  --background: linear-gradient(
+    180deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(34, 195, 98, 1) 51%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 
+/* ========== Global ========== */
 body {
-  font-size: 8pt;
   color: black;
+  font-size: 8pt;
   font-family: "Verdana", sans-serif;
   background: var(--background);
-  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center; /* Center content vertically */
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  margin: 0;
+  overflow: scroll;
+}
+
+.body::-webkit-scrollbar {
+  display: none;
 }
 
 ul {
@@ -34,73 +43,93 @@ img {
   width: 100%;
 }
 
-
-/* ===============================
-   Layout Containers
-=============================== */
+/* ========== Layout ========== */
 .viewport {
   display: flex;
-  flex-grow: 1;
   flex-direction: inherit;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  max-width: 35vw;
+  flex-grow: 1;
+  max-width: var(--vpwidth);
 }
-
 
 .ad {
-  display: block;
-  max-width: inherit;
-  border: var(--border);
-  border-style:outset;
+  display: flex;
+  object-fit: fill;
+  width: 100%;
+  max-height: 5vh;
 }
 
-#zb_ad {
-  min-height: 100%;
+.ad_space {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--mainbackground);
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: var(--vpwidth);
+  overflow: hidden;
+  border: var(--border);
+  border-style: var(--borderstyle);
+  background-color: var(--mainbackground);
+}
+
+.logo {
+	flex-grow: 1;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+  border-right: var(--border);
+  border-right-style: var(--borderstyle);
+}
+
+#bottom_ad {
+  width: var(--vpwidth);
+  border: var(--border);
+  border-style: var(--borderstyle);
 }
 
 .everything {
   display: flex;
   flex-direction: row;
+  width: var(--vpwidth);
+  min-height: 80vh;
+  overflow: hidden;
   border: var(--border);
   border-style: var(--borderstyle);
-  max-width: 100%;
-  height: 80vh;
-  overflow: hidden;
   background-color: var(--mainbackground);
 }
 
 .main {
-  flex: 3;
+  flex: 4;
+  gap: var(--gap);
   margin: var(--gap);
   margin-left: 0;
-  word-wrap: break-word;
   min-height: 0;
   overflow: hidden;
-  gap: var(--gap);
+  word-wrap: break-word;
 }
 
 .navbar {
   width: 100%;
-  border: none;
   margin-left: 0;
+  border: none;
 }
 
-
-
-/* ===============================
-   Aside Section
-=============================== */
-.aside {
-  flex: 1;
+/* ========== Aside L ========== */
+.asideL {
+  flex: 2;
   display: flex;
   flex-direction: column;
   max-width: calc(100% / 3);
   overflow-y: scroll;
 }
 
-.aside_header {
+.asideL_header {
   display: flex;
   margin: var(--gap);
   margin-bottom: 0;
@@ -109,7 +138,7 @@ img {
   background-color: black;
 }
 
-.aside_content {
+.asideL_content {
   display: flex;
   flex-direction: column;
   flex: 90%;
@@ -117,37 +146,42 @@ img {
   background-color: white;
 }
 
-.aside_content .text {
+.asideL_content .text {
   padding: 0.3rem;
-  overflow-wrap: break-word;
-  word-break: break-word;
   border: var(--border);
   border-style: var(--innerborderstyle);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
-.aside_content .iframebuttons {
+.main .iframebuttons {
+  display: flex;
+  flex-direction: row;
   padding: 0;
-  width: 100%;
+  max-height: 20px;
+  gap: 3px;
 }
 
-.aside_footer {
-  padding: 3px 3px 0px 3px;
-  font-size: 0.6vw;
-  font-weight: bold;
-  align-items: center;
+.iframebuttons img {
+  max-height: 15px;
+}
+
+.asideL_footer {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 3px 3px 0 3px;
+  font-size: 0.6vw;
+  font-weight: bold;
   background-color: var(--mainbackground);
 }
 
-/* Hide scrollbar in webkit browsers */
-.body::-webkit-scrollbar {
-  display: none;
+/* ========== Aside R ========== */
+.asideR {
+  flex: 1;
 }
 
-/* ===============================
-   Footer
-=============================== */
+/* ========== Footer ========== */
 .footer {
   display: flex;
   justify-content: center;
@@ -158,62 +192,41 @@ img {
 
 .footer .button {
   width: fit-content;
-  transition: 0.2s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 .footer .button:hover {
-  transform: scale(105%);
+  transform: scale(95%);
 }
 
-/* ===============================
-   Chat / Player Elements
-=============================== */
+/* ========== Chat / Player ========== */
 .chatbox {
+  flex-grow: 1;
   border: var(--border);
   border-style: var(--innerborderstyle);
-  flex-grow: 1;
-  padding-top: 5px;
 }
 
-.player {
-  display: grid;
-}
-
-/* ===============================
-   Links
-=============================== */
+/* ========== Links ========== */
 .everything a {
   color: rgb(21, 186, 246);
   text-decoration: none;
   vertical-align: middle;
 }
 
-/* ===============================
-   Boxes & Borders
-=============================== */
-.box {
-  margin: 5px;
-  padding: 5px;
-  border: 0px solid yellow;
-  word-wrap: break-word;
-}
-
-/* ===============================
-   Marquee
-=============================== */
+/* ========== Marquee ========== */
 .marquee {
-  margin: 0;
   position: relative;
   display: flex;
+  width: 100%;
+  margin: 0;
   overflow: hidden;
   user-select: none;
-  width: 100%;
 }
 
 .marquee__content {
-  flex-shrink: 0;
   display: flex;
   justify-content: space-around;
+  flex-shrink: 0;
   min-width: 100%;
   animation: scroll 60s linear infinite;
 }
@@ -227,16 +240,14 @@ img {
   }
 }
 
-/* ===============================
-   Home Iframe
-=============================== */
+/* ========== Iframes & Logos ========== */
 #home {
+  display: block;
+  flex: 1;
   width: 100%;
   height: 100%;
   border: var(--border);
   border-style: var(--innerborderstyle);
-  flex: 1;
-  display: block;
 }
 
 #logo {
