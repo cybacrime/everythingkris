@@ -1,17 +1,12 @@
 /* ========== Root ========== */
 :root {
   --gap: .1rem;
-  --vpwidth: 40vw;
+  --vpwidth: 45vw;
   --border: 2px rgb(207, 207, 207);
   --borderstyle: outset;
   --innerborderstyle: inset;
   --mainbackground: rgb(219, 219, 219);
-  --background: linear-gradient(
-    180deg,
-    rgba(34, 193, 195, 1) 0%,
-    rgba(34, 195, 98, 1) 51%,
-    rgba(0, 0, 0, 1) 100%
-  );
+  --background: solid black;
 }
 
 /* ========== Global ========== */
@@ -19,7 +14,10 @@ body {
   color: black;
   font-size: 8pt;
   font-family: "Verdana", sans-serif;
-  background: var(--background);
+  background-image: url(backgrounds/scrapback.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -216,6 +214,7 @@ img {
 /* ========== Marquee ========== */
 .marquee {
   position: relative;
+  height: 20px;
   display: flex;
   width: 100%;
   margin: 0;
