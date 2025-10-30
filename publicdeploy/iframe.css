@@ -1,6 +1,6 @@
 :root {
   --secondarycolor: rgb(93, 170, 92);
-  --padding: 20px;
+  --padding: 30px;
 }
 #document {
   width: 100%;
@@ -38,6 +38,7 @@ body {
   font-size: 1rem;
   font-weight: bold;
   align-content: baseline;
+  line-height: 1rem;
 }
 
 .article .header .tag {
@@ -84,7 +85,7 @@ a:hover {
 
 .textbox {
   border: 0px solid white;
-  padding: var(--padding);
+  padding: var(--padding) var(--padding) 0 var(--padding);
   overflow: auto;
 }
 
@@ -104,8 +105,4 @@ a:hover {
 
 .article {
   margin: var(--padding);
-}
-
-h3 {
-  margin: var(--padding) 0;
 }
