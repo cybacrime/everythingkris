@@ -8,7 +8,7 @@
   --mainbackground: rgb(219, 219, 219);
   --background: solid black;
   --iframebuttonheight: 30px;
-  --secondarycolor: rgb(15, 153, 0);
+  --secondarycolor: rgb(0, 66, 99);
 }
 
 *{
@@ -208,6 +208,7 @@ img {
   padding-right: 3px;
   display: inline-block;
   vertical-align: middle;
+    filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.3));
 }
 
 .main .iframebuttons {
@@ -290,9 +291,11 @@ img {
 /* ========== Links ========== */
 .everything a {
   color: var(--secondarycolor);
-  text-decoration: underline;
+  line-height: 9pt;
+  text-decoration: none;
   vertical-align: middle;
   transition: 0.2s ease-in-out;
+  text-shadow: 0 0.5px 0 rgba(255, 255, 255, 0.6), 0 -0.5px 0 rgba(0, 0, 0, 0.3);
 }
 
 /* ========== Marquee ========== */
