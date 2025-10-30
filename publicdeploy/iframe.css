@@ -35,10 +35,12 @@ body {
 }
 
 .article .header .title {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   align-content: baseline;
-  line-height: 1rem;
+  line-height: 1.2rem;
+  letter-spacing: -1pt;
+  text-align: left;
 }
 
 .article .header .tag {
