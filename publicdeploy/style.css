@@ -102,6 +102,10 @@ img {
 	align-content: center;
   border-right: var(--border);
   border-right-style: var(--borderstyle);
+  background-image: url(images/compbook.png);
+  background-position: center center;
+  background-size:cover;
+  background-repeat: no-repeat;
 }
 
 #bottom_addition {
