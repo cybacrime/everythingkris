@@ -11,6 +11,7 @@
   --secondarycolor: rgb(0, 66, 99);
 }
 
+
 *{
     -ms-overflow-style: none;  
     scrollbar-width: none; 
@@ -34,7 +35,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Center content vertically */
+  justify-content: center;
+  text-align: justify;
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -102,10 +104,16 @@ img {
 	align-content: center;
   border-right: var(--border);
   border-right-style: var(--borderstyle);
-  background-image: url(images/compbook.png);
-  background-position: center center;
+  background-image: url(images/rocklogo.jpg);
+  background-position: center;
   background-size:cover;
   background-repeat: no-repeat;
+}
+
+.logo_overlay {
+  color: white;
+  background-color: black;
+  padding: 3px;
 }
 
 #bottom_addition {
@@ -306,6 +314,7 @@ img {
   color: var(--secondarycolor);
   line-height: 9pt;
   text-decoration: none;
+  text-align: left;
   vertical-align: middle;
   transition: 0.2s ease-in-out;
   text-shadow: 0 0.5px 0 rgba(255, 255, 255, 0.6), 0 -0.5px 0 rgba(0, 0, 0, 0.3);
@@ -357,4 +366,14 @@ img {
 #flagcount {
   background-color: var(--mainbackground);
   height: 100%;
+}
+
+/* Media queries */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image: url(backgrounds/compbg-blank.png);
+    background-color: rgb(30, 21, 32);
+    background-size: cover;
+  }
 }

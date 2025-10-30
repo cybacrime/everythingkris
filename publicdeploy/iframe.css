@@ -1,6 +1,7 @@
 :root {
-  --secondarycolor: rgb(93, 170, 92);
+  --secondarycolor:  rgb(255, 0, 144);
   --padding: 30px;
+  --textpadding: 5px;
 }
 #document {
   width: 100%;
@@ -21,35 +22,6 @@ body {
 -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
-.article {
-  gap: 0px;
-}
-
-.article .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 8px;
-}
-
-.article .header .title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  align-content: baseline;
-  line-height: 1.2rem;
-  letter-spacing: -1pt;
-  text-align: left;
-}
-
-.article .header .tag {
-  color:#898989;
-  font-size: 0.7rem;
-  text-align: right;
-  align-self: baseline;
-}
-
 
 img {
   width: 100%;
@@ -105,6 +77,76 @@ a:hover {
   width: 100%;
 }
 
-.article {
-  margin: var(--padding);
+/* new shyt */
+
+
+.article .thumbnail {
+  position: relative;
+}
+
+.article .thumbnail img {
+  width: 100%;
+  height: 100%;
+}
+
+.article .thumbnail .text {
+  text-transform: lowercase;
+  position: absolute;
+  width: 100%;
+  font-weight: bold;
+  font-size: 7vw;
+  bottom: 0;
+  left: 0;
+  color: white;
+}
+
+.article .thumbnail .text .tag {
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  font-size: 3vw;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  z-index: 1;
+  max-width: min-content;
+  white-space: nowrap;
+  padding: var(--textpadding);
+}
+
+.article .thumbnail .text .titledater {
+  text-align: left;
+  align-items: flex-end;
+  padding-bottom: 2px;
+  justify-content: space-between;
+  display: flex;
+  height: 100%;
+}
+
+.article  .thumbnail .text .titledater .titlebox {
+  display: inline;
+}
+
+
+.article  .thumbnail .text .titledater .titlebox .titletext {
+  display: inline;
+  background-color: black;
+  box-decoration-break: clone;
+  padding: 0 var(--textpadding);
+}
+
+.article  .thumbnail .text .titledater .titlebox .titletext:hover {
+  background-color: var(--secondarycolor);
+  color: black;
+}
+
+
+.article .thumbnail .text .titledater .dater {
+  text-align: right;
+  font-size: 6pt;
+  font-weight: lighter;
+  padding-right: var(--textpadding);
+  min-width: max-content;
+}
+
+.article .body {
+  padding: var(--padding);
 }
