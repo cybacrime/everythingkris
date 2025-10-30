@@ -7,8 +7,19 @@
   --innerborderstyle: inset;
   --mainbackground: rgb(219, 219, 219);
   --background: solid black;
-  --iframebuttonheight: 20px;
+  --iframebuttonheight: 30px;
   --secondarycolor: rgb(15, 153, 0);
+}
+
+*{
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+    image-rendering: optimizeSpeed;
+    -webkit-text-size-adjust: none;
+}
+
+*::-webkit-scrollbar { 
+    display: none; 
 }
 
 /* ========== Global ========== */
@@ -32,9 +43,6 @@ body {
   scrollbar-width: none;
 }
 
-body::-webkit-scrollbar {
-  display: none;
-}
 
 ul {
   padding: 0;
@@ -207,7 +215,7 @@ img {
 }
 
 .iframebuttons img {
-  max-height: 15px;
+  max-height: calc(var(--iframebuttonheight) - 3px);
 }
 
 .iframebuttons img:active {
@@ -299,7 +307,7 @@ img {
   justify-content: space-around;
   flex-shrink: 0;
   min-width: 100%;
-  animation: scroll 60s linear infinite;
+  animation: scroll 80s linear infinite;
 }
 
 @keyframes scroll {

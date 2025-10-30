@@ -1,5 +1,6 @@
 :root {
   --secondarycolor: rgb(93, 170, 92);
+  --padding: 10px;
 }
 #document {
   width: 100%;
@@ -17,12 +18,15 @@ body {
   scrollbar-width: none;
 }
 
-body::-webkit-scrollbar {
-  display: none;
+* {
+-ms-overflow-style: none;
+  scrollbar-width: none;
+  image-rendering: optimizeSpeed;
 }
 
 .article {
   gap: 0px;
+  padding: var(--padding);
 }
 
 .article .header {
@@ -83,7 +87,7 @@ a:hover {
 
 .textbox {
   border: 0px solid white;
-  padding: 5px;
+  padding: var(--padding);
   overflow: auto;
 }
 
@@ -94,7 +98,7 @@ a:hover {
 }
 
 .textbox__text {
-  padding: 0px;
+  padding: var(--padding);
   overflow: hidden;
 }
 
@@ -103,14 +107,14 @@ a:hover {
 }
 
 .article {
-  margin: 10px;
+  margin: var(--padding);
 }
 
 .body {
-  padding: 5px 0;
+  padding: var(--padding) 0;
   text-align: justify;
 }
 
 h3 {
-  margin: 5px 0;
+  margin: var(--padding) 0;
 }
