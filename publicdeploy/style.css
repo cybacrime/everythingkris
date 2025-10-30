@@ -266,7 +266,7 @@ img {
 
 /* ========== Aside R ========== */
 .asideR {
-  flex: 1;
+  flex: 2;
 }
 
 .neighbors {
@@ -278,10 +278,6 @@ img {
   grid-template-columns: auto auto;
   column-gap: 5px;
   row-gap: 3px;
-}
-
-.neighborbuttons img {
-  width: inherit;
 }
 
 /* ========== Footer ========== */
