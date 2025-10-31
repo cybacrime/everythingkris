@@ -65,20 +65,20 @@ img {
   max-width: var(--vpwidth);
 }
 
-.addition {
+.banner {
   display: flex;
   object-fit: fill;
   width: 100%;
   max-height: 5vh;
 }
 
-.addition_space {
+.banner_space {
   display: flex;
   flex-direction: column;
   background-color: var(--mainbackground);
 }
 
-.addition_space .addition {
+.banner_space .banner {
   max-height: 100%;
   width: calc(100% - 3px);
   border: var(--border);
@@ -116,7 +116,7 @@ img {
   padding: 3px;
 }
 
-#bottom_addition {
+#bottom_banner {
   width: var(--vpwidth);
   border: var(--border);
   border-style: var(--borderstyle);

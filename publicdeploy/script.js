@@ -1,4 +1,4 @@
-/* additions template. dont forget comma
+/* banners template. dont forget comma
 
 {
     image: 'name',
@@ -7,7 +7,7 @@
 }
     */
 
-const additions = [
+const banners = [
     { 
         image: 'rm94',
         url: 'https://rm94.neocities.org',
@@ -22,24 +22,24 @@ const additions = [
 
 
 //cycle function
-function additionsdisplay() {
-    const random_index = Math.floor(Math.random() * additions.length);
-    const selected_addition = additions[random_index];
+function bannersDisplay() {
+    const random_index = Math.floor(Math.random() * banners.length);
+    const selected_banner = banners[random_index];
     
     // updates img
-    const additionImg = document.getElementById('addition');
-    additionImg.src = `./additions_square/${selected_addition.image}.gif`;
-//    additionImg.title = selected_addition.title;
+    const bannerImg = document.getElementById('banner');
+    bannerImg.src = `./banners_sqr/${selected_banner.image}.gif`;
+//    bannerImg.title = selected_banner.title;
 //i dont want to have tooltip so just putting it in a note for now    
 
     // updates href link
-    const additionLink = document.getElementById('addition-link');
-    if (additionLink) {
-        additionLink.href = selected_addition.url;
-        additionLink.target = '_blank';
+    const bannerLink = document.getElementById('banner-link');
+    if (bannerLink) {
+        bannerLink.href = selected_banner.url;
+        bannerLink.target = '_blank';
     }
     
-    setTimeout(additionsdisplay, 10000);
+    setTimeout(bannersdisplay, 10000);
 }
 
-additionsdisplay();
+bannersDisplay();
