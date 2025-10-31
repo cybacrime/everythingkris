@@ -308,6 +308,8 @@ img {
 /* ========== Links ========== */
 .everything a {
   color: var(--secondarycolor);
+  font-size: 0.6rem;
+  font-weight: bold;
   line-height: 9pt;
   text-decoration: none;
   text-align: left;

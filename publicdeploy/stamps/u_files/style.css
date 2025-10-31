@@ -1,0 +1,143 @@
+/* BRANDING ASSETS */
+
+:root {
+    --white: white;
+    --cyan: #2EBED6;
+    --lime: #B5D333;
+    --green: #009B36;
+    --blue: #2A61D1;
+    --black: black;
+}
+
+@font-face {
+    font-family: "Owners Narrow";
+    src: url("../branding/OwnersNarrow-BoldItalic.ttf");
+}
+
+@font-face {
+    font-family: "Owners Text";
+    src: url("../branding/OwnersText-MediumItalic.ttf");
+}
+
+/* GENERAL STYLING */
+
+html {
+    image-rendering: pixelated;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/bg-day.gif");
+    background-color: var(--lime);
+}
+
+.night {
+    background-image: url("../img/bg-night.gif");
+    background-color: var(--black);
+}
+
+table {
+    border: none;
+}
+
+/* EXTERNAL MEDIA */
+
+img, video, iframe {
+    vertical-align: bottom;
+}
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* FRONT PAGE */
+
+#date {
+    font-weight: bold;
+    line-height: 0;
+    font-size: 14px;
+    margin: 0;
+}
+
+marquee {
+    color: white;
+    font-size: 13px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 8px 0;
+    padding: 0;
+}
+
+.small-ul {
+    margin: 4px 0 4px 15px;
+    padding: 0;
+}
+
+.small-ul li{
+    font-size: 11px;
+    display: inline-block;
+}
+
+#hfx li a, #dsgn li a{
+    margin-left: 0;
+    margin-right: 4px;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.button{
+  color: transparent;
+}
+
+#sidebar a{
+    color: var(--blue);
+    margin-left: 15px;
+}
+#sidebar a:hover{
+    color: var(--green);
+}
+#sidebar a:active{
+    color: var(--lime);
+}
+
+footer {
+    color: var(--white);
+    font-size: 11px;
+}
+
+#vibe{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+#feed{
+    font-size: 11px;
+    margin: 0px 12px 3px;
+}
+
+#timeAgo{
+    color: white;
+    font-size: 13px;
+    margin: 0px 15px 0px 0px;
+    padding: 0px;
+    text-align: right;
+    font-weight: bold;
+}
+
+#vibe-bg{
+    background-color: var(--cyan);
+    background-image: url("../img/vibe-bg.gif");
+    background-repeat: no-repeat;
+    background-position: right;
+}
