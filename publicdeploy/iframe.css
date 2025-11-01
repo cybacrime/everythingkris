@@ -2,7 +2,6 @@
   --secondarycolor:  rgb(255, 0, 144);
   --padding: 30px;
   --textpadding: 5px;
-  --black: rgb(19, 24, 32);
 }
 #document {
   width: 100%;
@@ -127,7 +126,7 @@ a:hover {
 
 .article  .thumbnail .text .titledater .titlebox .titletext {
   display: inline;
-  background-color: var(--black);
+  background-color: black;
   box-decoration-break: clone;
   padding: 0 var(--textpadding);
 }

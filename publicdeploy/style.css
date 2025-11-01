@@ -1,4 +1,4 @@
-/* Root */
+/* ========== Root ========== */
 :root {
   --gap: .1rem;
   --fontsize: 8pt;
@@ -13,7 +13,6 @@
   --linkcolor: rgb(0, 66, 99);
   --secondarycolor: rgb(255, 0, 144);
   --contentbg: white;
-  --black: rgb(19, 24, 32);
 }
 
 
@@ -27,7 +26,7 @@
     display: none; 
 }
 
-/* Global*/
+/* ========== Global ========== */
 body {
   color: black;
   font-size: var(--fontsize);
@@ -59,7 +58,7 @@ img {
   width: 100%;
 }
 
-/* overall layout */
+/* ========== Layout ========== */
 .viewport {
   display: flex;
   flex-direction: inherit;
@@ -100,6 +99,17 @@ img {
   background-color: var(--mainbackground);
 }
 
+.statuscafe {
+  background-color: var(--contentbg);
+	flex-grow: 1;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+  border-right: var(--border);
+  border-right-style: var(--borderstyle);
+}
+
 #bottom_banner {
   width: var(--vpwidth);
   border: var(--border);
@@ -131,7 +141,7 @@ img {
   border: none;
 }
 
-/* Aside L left side*/
+/* ========== Aside L ========== */
 .asideL {
   flex: 2;
   display: flex;
@@ -146,7 +156,7 @@ img {
   margin-bottom: 0;
   border: var(--border);
   border-style: var(--innerborderstyle);
-  background-color: var(--black);
+  background-color: black;
 }
 
 .asideL_content {
@@ -250,7 +260,7 @@ img {
   background-color: var(--mainbackground);
 }
 
-/* Right side Aside R*/
+/* ========== Aside R ========== */
 .asideR {
   flex: 2;
 }
@@ -266,7 +276,7 @@ img {
   row-gap: 3px;
 }
 
-/* Footer with buttons */
+/* ========== Footer ========== */
 .footer {
   display: ruby;
   height: 45px;
@@ -286,14 +296,14 @@ img {
   transform: scale(95%);
 }
 
-/* Chattable */
+/* ========== Chat / Player ========== */
 .chatbox {
   flex-grow: 1;
   border: var(--border);
   border-style: var(--innerborderstyle);
 }
 
-/* Links */
+/* ========== Links ========== */
 .everything a {
   color: var(--linkcolor);
   font-size: var(--fontsize);
@@ -306,7 +316,7 @@ img {
   text-shadow: 0 0.5px 0 rgba(255, 255, 255, 0.6), 0 -0.5px 0 rgba(0, 0, 0, 0.3);
 }
 
-/* Blinkie marquee*/
+/* ========== Marquee ========== */
 .marquee {
   position: relative;
   height: 20px;
@@ -356,33 +366,21 @@ img {
 
 /* Statuscafe */
 
-.statuscafe {
-  background-color: var(--black);
-	flex-grow: 1;
-  display: flex;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-  border-right: var(--border);
-  border-right-style: var(--borderstyle);
-}
-
 #statuscafe {
   align-content: center;
   text-align: center;
   width: 100%;
   height: 100%;
   padding: .5em;
-  color: white;
 }
 
 #statuscafe-username {
-  color: rgb(255, 255, 255);
+  color: black;
 }
 
 #statuscafe-username a::after {
   content: ' says...';
-  color: white;
+  color: black;
   font-weight: lighter;
   text-decoration: solid white 10px;
 }
@@ -397,7 +395,7 @@ img {
 @media (prefers-color-scheme: dark) {
   body {
     background-image: url(backgrounds/compbg-blank.png);
-    background-color: var(--black);
+    background-color: rgb(30, 21, 32);
     background-size: cover;
   }
 }
