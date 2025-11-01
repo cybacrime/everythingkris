@@ -39,7 +39,7 @@ function bannersDisplay() {
         bannerLink.target = '_blank';
     }
     
-    setTimeout(bannersdisplay, 10000);
+    setTimeout(bannersDisplay, 10000);
 }
 
 bannersDisplay();
