@@ -1,21 +1,24 @@
 /* ========== Root ========== */
 :root {
   --gap: .1rem;
+  --fontsize: 8pt;
   --vpwidth: 45vw;
+  --vpheight: 90vh;
   --border: 2px rgb(207, 207, 207);
   --borderstyle: outset;
   --innerborderstyle: inset;
   --mainbackground: rgb(219, 219, 219);
   --background: solid black;
   --iframebuttonheight: 30px;
-  --secondarycolor: rgb(0, 66, 99);
+  --linkcolor: rgb(0, 66, 99);
+  --secondarycolor: rgb(255, 0, 144);
+  --contentbg: white;
 }
 
 
 *{
     -ms-overflow-style: none;  
     scrollbar-width: none; 
-    image-rendering: optimizeSpeed;
     -webkit-text-size-adjust: none;
 }
 
@@ -26,7 +29,7 @@
 /* ========== Global ========== */
 body {
   color: black;
-  font-size: 8pt;
+  font-size: var(--fontsize);
   font-family: "Verdana", sans-serif;
   background-image: url(backgrounds/scrapback.png);
   background-size: cover;
@@ -40,7 +43,7 @@ body {
   width: 100vw;
   height: 100vh;
   margin: 0;
-  overflow: scroll;
+  overflow: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -63,13 +66,13 @@ img {
   align-items: center;
   flex-grow: 1;
   max-width: var(--vpwidth);
+  max-height: var(--vpheight);
 }
 
 .banner {
   display: flex;
   object-fit: fill;
   width: 100%;
-  max-height: 5vh;
 }
 
 .banner_space {
@@ -96,7 +99,8 @@ img {
   background-color: var(--mainbackground);
 }
 
-.logo {
+.statuscafe {
+  background-color: var(--contentbg);
 	flex-grow: 1;
   display: flex;
 	justify-content: center;
@@ -104,16 +108,6 @@ img {
 	align-content: center;
   border-right: var(--border);
   border-right-style: var(--borderstyle);
-  background-image: url(images/rocklogo.jpg);
-  background-position: center;
-  background-size:cover;
-  background-repeat: no-repeat;
-}
-
-.logo_overlay {
-  color: white;
-  background-color: black;
-  padding: 3px;
 }
 
 #bottom_banner {
@@ -126,7 +120,6 @@ img {
   display: flex;
   flex-direction: row;
   width: var(--vpwidth);
-  min-height: 80vh;
   overflow: hidden;
   border: var(--border);
   border-style: var(--borderstyle);
@@ -171,15 +164,16 @@ img {
   flex-direction: column;
   flex: 90%;
   margin: var(--gap);
-  background-color: white;
+  background-color: var(--mainbackground);
 }
 
-.asideL_content .text {
+.asideL_content .info {
   padding: 0.3rem;
   border: var(--border);
   border-style: var(--innerborderstyle);
   overflow-wrap: break-word;
   word-break: break-word;
+  background-color: vaR(--contentbg);
 }
 
 
@@ -196,7 +190,7 @@ img {
   display: flex;
   align-items: center;
   font-weight: bold;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
   padding: 3px;
   border: var(--border);
   border-style: var(--borderstyle);
@@ -227,6 +221,8 @@ img {
   min-height: 25px;
   gap: 3px;
   margin-bottom: 1px;
+  overflow: scroll;
+  white-space: nowrap;
 }
 
 .iframebuttons a {
@@ -282,11 +278,13 @@ img {
 
 /* ========== Footer ========== */
 .footer {
-  display: flex;
+  display: ruby;
+  height: 45px;
   justify-content: center;
   gap: var(--gap);
   max-width: var(--vpwidth);
   margin-top: 3px;
+  overflow-x: scroll;
 }
 
 .footer .button {
@@ -307,8 +305,8 @@ img {
 
 /* ========== Links ========== */
 .everything a {
-  color: var(--secondarycolor);
-  font-size: 0.6rem;
+  color: var(--linkcolor);
+  font-size: var(--fontsize);
   font-weight: bold;
   line-height: 9pt;
   text-decoration: none;
@@ -346,7 +344,7 @@ img {
   }
 }
 
-/* ========== Iframes & Logos ========== */
+/* Iframes */
 #headlines {
   display: block;
   width: 100%;
@@ -366,6 +364,32 @@ img {
   height: 100%;
 }
 
+/* Statuscafe */
+
+#statuscafe {
+  align-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: .5em;
+}
+
+#statuscafe-username {
+  color: black;
+}
+
+#statuscafe-username a::after {
+  content: ' says...';
+  color: black;
+  font-weight: lighter;
+  text-decoration: solid white 10px;
+}
+
+#statuscafe-username a {
+  font-weight: bold;
+  color: var(--secondarycolor);
+}
+
 /* Media queries */
 
 @media (prefers-color-scheme: dark) {
@@ -373,5 +397,85 @@ img {
     background-image: url(backgrounds/compbg-blank.png);
     background-color: rgb(30, 21, 32);
     background-size: cover;
+  }
+}
+
+@media (width<=500px) {
+  :root {
+    --vpwidth: 100vw;
+    --vpheight: 90vh;
+  }
+
+  body {
+    overflow: hidden;
+  }
+
+  .everything {
+    display: block;
+  }
+
+   .everything a {
+    font-size: var(--fontsize);
+  }
+
+  .statuscafe {
+    padding: 10px 0;
+  }
+
+  .banner_space iframe {
+    display: none;
+  }
+
+  .asideL {
+    max-width: var(--vpwidth);
+    max-height: calc(var(--vpheight) * .2);
+    align-items: center;
+  }
+
+  .asideL_content {
+    flex-direction: row;
+    width: 99%;
+  }
+
+  .asideL_content #flagcount, .chatbox {
+    display: none;
+  }
+  
+  .asideL_content .info {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .info .text {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .asideL_content img {
+    object-fit: cover;
+    width: 50%;
+  }
+  
+  .asideL_content .socbuttons {
+    width: 40%;
+  }
+
+  .socbutton img {
+    object-fit: contain;
+    height: 100%;
+  }
+
+
+  .asideR, .asideL_footer {
+    display: none;
+  }
+
+  .main {
+    height: 80vh;
+  }
+
+  #bottom_banner {
+    display: none;
   }
 }
