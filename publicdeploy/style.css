@@ -13,6 +13,7 @@
   --linkcolor: rgb(0, 66, 99);
   --secondarycolor: rgb(255, 0, 144);
   --contentbg: white;
+  --black: rgb(25, 27, 32);
 }
 
 
@@ -99,16 +100,6 @@ img {
   background-color: var(--mainbackground);
 }
 
-.statuscafe {
-  background-color: var(--contentbg);
-	flex-grow: 1;
-  display: flex;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-  border-right: var(--border);
-  border-right-style: var(--borderstyle);
-}
 
 #bottom_banner {
   width: var(--vpwidth);
@@ -366,23 +357,35 @@ img {
 
 /* Statuscafe */
 
+.statuscafe {
+  background-color: var(--black);
+	flex-grow: 1;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+  border-right: var(--border);
+  border-color: vaR(--black);
+  border-right-style: var(--borderstyle);
+}
+
 #statuscafe {
   align-content: center;
   text-align: center;
   width: 100%;
   height: 100%;
   padding: .5em;
+  color: white;
 }
 
 #statuscafe-username {
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 #statuscafe-username a::after {
   content: ' says...';
-  color: black;
+  color: rgb(255, 255, 255);
   font-weight: lighter;
-  text-decoration: solid white 10px;
 }
 
 #statuscafe-username a {
