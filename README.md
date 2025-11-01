@@ -1,0 +1,1 @@
+ This is just my repo for my Neocities website, ETK. My workflow is so much easier using the Action by Bret Comnes (bcomnes). Highly recommend! Get it for urself here: https://github.com/bcomnes/deploy-to-neocities/tree/v3/
