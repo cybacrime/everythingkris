@@ -2,6 +2,7 @@
   --secondarycolor:  rgb(255, 0, 144);
   --padding: 30px;
   --textpadding: 5px;
+  --mapmargin: 30px;
 }
 #document {
   width: 100%;
@@ -147,4 +148,65 @@ a:hover {
 
 .article .body {
   padding: var(--padding);
+}
+
+
+/* Street line page css */
+
+:root {
+
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.streetline {
+    position: relative;
+    max-width: 80%;
+    margin: 10px auto 25px auto;
+    box-shadow: -1px 0 0 var(--secondarycolor);
+}
+
+/*
+.streetline::before {
+    content: '';
+    position: relative;
+    border-style: solid;
+    border-width: 1px 1px 0 1px;
+    border-color: blue;
+    left: 50%;
+    transform: translate(100%);
+    z-index: 1;
+}
+    */
+
+.neighbor_container:nth-child(n+2):nth-child(-n+6) {
+    margin-top: var(--mapmargin);
+}
+
+/* marker */
+.streetline .neighbor_container::after {
+    left: -3px;
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: var(--secondarycolor);
+    top: var(--mapmargin);
+    border-radius: 100%;
+}
+
+.streetline .neighbor_container {
+    padding: 10px;
+    position: relative;
+    width: auto;
+}
+
+.streetline .neighbor_container_content {
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(217, 217, 217);
+    position: relative;
 }
