@@ -9,7 +9,7 @@
   --innerborderstyle: inset;
   --mainbackground: rgb(219, 219, 219);
   --background: solid black;
-  --iframebuttonheight: 30px;
+  --iframebuttonheight: 25px;
   --linkcolor: rgb(0, 66, 99);
   --secondarycolor: rgb(255, 0, 144);
   --contentbg: white;
@@ -100,6 +100,9 @@ img {
   background-color: var(--mainbackground);
 }
 
+#top_banner {
+  height: auto;
+}
 
 #bottom_banner {
   width: var(--vpwidth);
@@ -202,7 +205,7 @@ img {
   padding-right: 3px;
   display: inline-block;
   vertical-align: middle;
-    filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.3));
 }
 
 .main .iframebuttons {
@@ -403,6 +406,18 @@ img {
   }
 }
 
+/* tablet idk */
+@media (width<=1024px) {
+  :root {
+    --vpwidth: 90vw;
+  }
+
+  #top_banner {
+    display: none;
+  }
+}
+
+/* phone */
 @media (width<=500px) {
   :root {
     --vpwidth: 100vw;
@@ -469,6 +484,9 @@ img {
     height: 100%;
   }
 
+  .main_iframe {
+  height: 72%;
+  }
 
   .asideR, .asideL_footer {
     display: none;
