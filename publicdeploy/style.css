@@ -100,10 +100,6 @@ img {
   background-color: var(--mainbackground);
 }
 
-#top_banner {
-  height: auto;
-}
-
 #bottom_banner {
   width: var(--vpwidth);
   border: var(--border);

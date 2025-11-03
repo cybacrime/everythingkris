@@ -24,6 +24,14 @@ body {
   scrollbar-width: none;
 }
 
+p {
+  margin: 0;
+}
+
+p + p {
+  margin-top: 1em;
+}
+
 img {
   width: 100%;
 }
@@ -153,58 +161,79 @@ a:hover {
 
 /* Street line page css */
 
+.map_about {
+  margin: 25px 25px 0 25px;
+}
+
 .streetline {
-    position: relative;
-    max-width: 80%;
-    margin: auto;
-    height: 100%;
+  position: relative;
+  max-width: 80%;
+  margin: auto;
+  height: 100%;
 }
 
 
 .streetline::before {
-    content: '';
-    position: relative;
-    border-style: solid;
-    border-width: 1px 1px 1000px 1px;
-    border-color: var(--secondarycolor);
-    transform: translate(100%);
-    left: -1px;
-    top: 40px;
-    z-index: 1;
+  content: '';
+  position: relative;
+  border-style: solid;
+  border-width: 1px 1px 1000px 1px;
+  border-color: rgb(211, 211, 211);
+  transform: translate(100%);
+  left: -1px;
+  top: 40px;
+  z-index: 1;
 }
     
 
 .neighbor_container:nth-child(n+2):nth-child(-n+6) {
-    margin-top: var(--mapmargin);
+  margin-top: var(--mapmargin);
 }
 
 /* marker */
-.streetline .neighbor_container::after {
-    left: -3px;
-    content: '';
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background-color: var(--secondarycolor);
-    top: calc(var(--mapmargin) - 5px);
-    border-radius: 100%;
+
+.streetline .neighbor_container .button::before {
+  left: -1px;
+  top: 25px;
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 1px;
+  background-color: rgb(211, 211, 211);
+  z-index: -1;
 }
 
 .streetline .neighbor_container {
-    padding: 10px;
-    position: relative;
-    width: auto;
+  padding: 10px;
+  position: relative;
+  width: auto;
+  display: flex;
 }
 
 .streetline .neighbor_container_content {
-    padding: 10px;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(217, 217, 217);
-    position: relative;
+  margin: 0 0 0 10px;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+
 }
 
 .streetline img {
   object-fit: contain;
   width: 88px;
   image-rendering: crisp-edges;
+  outline: 2px outset white;
+}
+
+.streetline img:hover {
+  filter: brightness(1.1);
+}
+
+.streetline img:active {
+  outline: 2px inset white;
+  transform: scale(99%);
+  filter: brightness(95%);
+}
+
+.streetline a:hover {
+  filter: brightness(1);
 }
