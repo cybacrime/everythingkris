@@ -250,6 +250,9 @@ img {
   background-color: var(--mainbackground);
 }
 
+.pink {
+  color: var(--secondarycolor);
+}
 /* ========== Aside R ========== */
 .asideR {
   flex: 2;
@@ -286,7 +289,7 @@ img {
   transform: scale(95%);
 }
 
-/* ========== Chat / Player ========== */
+/* ========== Chat ========== */
 .chatbox {
   flex-grow: 1;
   border: var(--border);
