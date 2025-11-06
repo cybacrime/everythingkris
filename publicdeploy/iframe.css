@@ -41,6 +41,10 @@ img {
   width: 100%;
 }
 
+i {
+  color: var(--secondarycolor);
+}
+
 name {
   font-weight: bold;
   text-decoration: underline;
