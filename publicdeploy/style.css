@@ -65,7 +65,6 @@ img {
   flex-direction: inherit;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
   max-width: var(--vpwidth);
   max-height: var(--vpheight);
 }
@@ -137,7 +136,7 @@ img {
   display: flex;
   flex-direction: column;
   max-width: calc(100% / 3);
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 .asideL_header {
@@ -207,8 +206,7 @@ img {
 .main .iframebuttons {
   display: flex;
   flex-direction: row;
-  padding: 0;
-  min-height: 25px;
+  max-height: var(--iframebuttonheight);
   gap: 3px;
   margin-bottom: 1px;
   overflow: scroll;
@@ -216,7 +214,7 @@ img {
 }
 
 .iframebuttons a {
-  padding: 5px;
+  padding: 5px 5px 7px 5px;
   border-radius: 2px;
   background-image: url(linkbuttons/blank.gif);
   background-size: cover;
