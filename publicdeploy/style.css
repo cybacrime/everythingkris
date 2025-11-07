@@ -65,8 +65,9 @@ img {
   flex-direction: inherit;
   justify-content: center;
   align-items: center;
+  flex-grow: 1;
   max-width: var(--vpwidth);
-  height: var(--vpheight);
+  max-height: var(--vpheight);
 }
 
 .banner {
@@ -113,7 +114,6 @@ img {
   border: var(--border);
   border-style: var(--borderstyle);
   background-color: var(--mainbackground);
-  flex-grow: 1;
 }
 
 .main {
@@ -137,7 +137,7 @@ img {
   display: flex;
   flex-direction: column;
   max-width: calc(100% / 3);
-  overflow-y: hidden;
+  overflow-y: scroll;
 }
 
 .asideL_header {
@@ -207,7 +207,8 @@ img {
 .main .iframebuttons {
   display: flex;
   flex-direction: row;
-  max-height: var(--iframebuttonheight);
+  padding: 0;
+  min-height: 25px;
   gap: 3px;
   margin-bottom: 1px;
   overflow: scroll;
@@ -215,7 +216,7 @@ img {
 }
 
 .iframebuttons a {
-  padding: 5px 5px 7px 5px;
+  padding: 5px;
   border-radius: 2px;
   background-image: url(linkbuttons/blank.gif);
   background-size: cover;
@@ -249,9 +250,6 @@ img {
   background-color: var(--mainbackground);
 }
 
-.star {
-  color: var(--secondarycolor);
-}
 /* ========== Aside R ========== */
 .asideR {
   flex: 2;
@@ -288,7 +286,7 @@ img {
   transform: scale(95%);
 }
 
-/* ========== Chat ========== */
+/* ========== Chat / Player ========== */
 .chatbox {
   flex-grow: 1;
   border: var(--border);
