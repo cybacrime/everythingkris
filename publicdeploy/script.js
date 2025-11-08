@@ -1,11 +1,10 @@
 /* banners template. dont forget comma
-
 {
     image: 'name',
     url: 'https://example.com',
     title: 'tooltip!'
 }
-    */
+*/
 
 const banners = [
     { 
@@ -17,14 +16,41 @@ const banners = [
         image: 'aftv',
         url: 'https://www.youtube.com/watch?v=rw51ICGBEQw',
         title: 'scared & impaired. tonight at 8/7c'
+    },
+    { 
+        image: 'clubpenguin',
+        url: 'https://play.cplegacy.com/',
+        title: 'Waddle On!'
+    },
+    { 
+        image: 'ximbo',
+        url: 'https://www.ximbo.land/',
+        title: 'A strange place with awesome people!'
     }
 ];
 
+// Shuffle array using Fisher-Yates algorithm
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
 
-//cycle function
+// Create a queue to track banner order
+let bannerQueue = [];
+
+function getBannerFromQueue() {
+    // If queue is empty, refill it with a new shuffled order
+    if (bannerQueue.length === 0) {
+        bannerQueue = shuffleArray([...banners]); // Create new shuffled copy
+    }
+    return bannerQueue.pop(); // Get next banner from queue
+}
+
 function bannersDisplay() {
-    const random_index = Math.floor(Math.random() * banners.length);
-    const selected_banner = banners[random_index];
+    const selected_banner = getBannerFromQueue();
     
     // updates img
     const bannerImg = document.getElementById('banner');

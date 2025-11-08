@@ -3,7 +3,7 @@
   --gap: .1rem;
   --fontsize: 8pt;
   --vpwidth: 45vw;
-  --vpheight: 90vh;
+  --vpheight: 95vh;
   --border: 2px rgb(207, 207, 207);
   --borderstyle: outset;
   --innerborderstyle: inset;
@@ -24,6 +24,11 @@
 
 *::-webkit-scrollbar { 
     display: none; 
+}
+
+::selection {
+  color: white;
+  background-color: var(--secondarycolor);
 }
 
 /* ========== Global ========== */
@@ -175,8 +180,15 @@ img {
   overflow-wrap: break-word;
   word-break: break-word;
   background-color: vaR(--contentbg);
+  text-align: left;
 }
 
+#pfp {
+  float: left;
+  width: 70px;
+  margin-right: 5px;
+  aspect-ratio: 1/1;
+}
 
 .socbuttons {
   display: flex;
@@ -428,6 +440,12 @@ img {
   }
 }
 
+@media (width<=720px) {
+  #pfp {
+    width: 100%;
+  }
+}
+
 /* phone */
 @media (width<=500px) {
   :root {
@@ -464,6 +482,8 @@ img {
   .asideL_content {
     flex-direction: row;
     width: 99%;
+    overflow: auto;
+    overflow: hidden;
   }
 
   .asideL_content #flagcount, .chatbox {
@@ -474,6 +494,7 @@ img {
     padding: 0;
     display: flex;
     flex-direction: row;
+    flex-grow: 1;
   }
 
   .info .text {
@@ -481,13 +502,17 @@ img {
     width: 100%;
   }
 
-  .asideL_content img {
-    object-fit: cover;
-    width: 50%;
+  #pfp {
+    margin: 0;
+    width: auto;
   }
   
   .asideL_content .socbuttons {
     width: 40%;
+  }
+
+  .socbutton {
+    padding: 0;
   }
 
   .socbutton img {
@@ -505,6 +530,10 @@ img {
 
   .main {
     height: 80vh;
+  }
+
+  .main_iframe {
+    height: 77%;
   }
 
   #bottom_banner {

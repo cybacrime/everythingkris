@@ -3,7 +3,7 @@
   --padding: 30px;
   --textpadding: 5px;
   --mapmargin: 30px;
-  --margin: 10%;
+  --margin: 30px;
 }
 #document {
   width: 100%;
@@ -41,6 +41,11 @@ img {
   width: 100%;
 }
 
+::selection {
+  color: white;
+  background-color: var(--secondarycolor);
+}
+
 i {
   color: var(--secondarycolor);
 }
@@ -68,6 +73,8 @@ a:hover {
 
 .textbox {
   margin: var(--margin);
+  object-fit: scale-down;
+  clear: both;
 }
 
 .textbox:last-child {
@@ -76,9 +83,10 @@ a:hover {
 
 
 .textbox__imageL {
-  max-width: calc(100% / 4);
+  max-width: calc(100% / 3);
   float: left;
-  padding: 15px;
+  margin: 0 15px 10px 0;
+  
 }
 
 .textbox__text {
