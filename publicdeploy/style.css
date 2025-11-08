@@ -16,7 +16,6 @@
   --black: rgb(25, 27, 32);
 }
 
-
 *{
     -ms-overflow-style: none;  
     scrollbar-width: none; 
@@ -59,7 +58,13 @@ img {
   width: 100%;
 }
 
-/* ========== Layout ========== */
+/* span*/
+
+.star {
+  color: var(--secondarycolor);
+}
+
+/* layout */
 .viewport {
   display: flex;
   flex-direction: inherit;
@@ -68,6 +73,22 @@ img {
   flex-grow: 1;
   max-width: var(--vpwidth);
   max-height: var(--vpheight);
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: var(--vpwidth);
+  overflow: hidden;
+  border: var(--border);
+  border-style: var(--borderstyle);
+  background-color: var(--mainbackground);
+}
+
+.top .banner {
+  flex: 2;
+  flex-grow: 1;
 }
 
 .banner {
@@ -89,17 +110,6 @@ img {
   border-style: var(--innerborderstyle);
 }
 
-.top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: var(--vpwidth);
-  overflow: hidden;
-  border: var(--border);
-  border-style: var(--borderstyle);
-  background-color: var(--mainbackground);
-}
-
 #bottom_banner {
   width: var(--vpwidth);
   border: var(--border);
@@ -109,6 +119,7 @@ img {
 .everything {
   display: flex;
   flex-direction: row;
+  flex-grow: 1;
   width: var(--vpwidth);
   overflow: hidden;
   border: var(--border);
@@ -131,7 +142,7 @@ img {
   border: none;
 }
 
-/* ========== Aside L ========== */
+/* Aside L*/
 .asideL {
   flex: 2;
   display: flex;
@@ -250,7 +261,7 @@ img {
   background-color: var(--mainbackground);
 }
 
-/* ========== Aside R ========== */
+/* Aside R*/
 .asideR {
   flex: 2;
 }
@@ -266,7 +277,7 @@ img {
   row-gap: 3px;
 }
 
-/* ========== Footer ========== */
+/* footer */
 .footer {
   display: ruby;
   height: 45px;
@@ -286,14 +297,14 @@ img {
   transform: scale(95%);
 }
 
-/* ========== Chat / Player ========== */
+/*  Chat */
 .chatbox {
   flex-grow: 1;
   border: var(--border);
   border-style: var(--innerborderstyle);
 }
 
-/* ========== Links ========== */
+/*  Links  */
 .everything a {
   color: var(--linkcolor);
   font-size: var(--fontsize);
@@ -306,7 +317,7 @@ img {
   text-shadow: 0 0.5px 0 rgba(255, 255, 255, 0.6), 0 -0.5px 0 rgba(0, 0, 0, 0.3);
 }
 
-/* ========== Marquee ========== */
+/*  Marquee  */
 .marquee {
   position: relative;
   height: 20px;
@@ -358,6 +369,7 @@ img {
 
 .statuscafe {
   background-color: var(--black);
+  flex: 1;
 	flex-grow: 1;
   display: flex;
 	justify-content: center;
@@ -391,6 +403,9 @@ img {
   font-weight: bold;
   color: var(--secondarycolor);
 }
+
+/* ads */
+
 
 /* Media queries */
 
