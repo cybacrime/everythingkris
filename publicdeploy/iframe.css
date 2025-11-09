@@ -3,7 +3,8 @@
   --padding: 30px;
   --textpadding: 5px;
   --mapmargin: 30px;
-  --margin: 30px;
+  --margin: 20px;
+  --black: rgb(25, 27, 32);
 }
 #document {
   width: 100%;
@@ -39,6 +40,7 @@ li {
 
 img {
   width: 100%;
+  image-rendering: pixelated;
 }
 
 ::selection {
@@ -249,4 +251,23 @@ a:hover {
 
 .streetline a:hover {
   filter: brightness(1);
+}
+
+.aboutme {
+  background-color: rgb(255, 103, 27);
+  color: rgb(0, 0, 0);
+  height: 100vh;
+}
+
+.aboutme .header {
+  background-color: var(--black);
+  height: 50px;
+}
+.aboutme h1 {
+  font-size: 1.5em;
+  color: white;
+}
+
+.aboutme .content {
+  margin: var(--margin);
 }
