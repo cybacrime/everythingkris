@@ -9,6 +9,11 @@
 #document {
   width: 100%;
 }
+
+#open {
+  width: 14px;
+  vertical-align: middle;
+}
   
 body {
   font-family: "verdana", sans-serif;
@@ -40,7 +45,7 @@ li {
 
 img {
   width: 100%;
-  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 ::selection {
@@ -52,54 +57,7 @@ i {
   color: var(--secondarycolor);
 }
 
-name {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-date {
-  color: #898989
-}
-  
-a {
-  color: var(--secondarycolor);
-  font-weight: bold;
-  text-decoration: underline;
-  transition: 0.2s ease-in-out;
-  text-underline-offset: 2px;
-}
-
-a:hover {
-  filter: brightness(1.2)
-}
-
-.textbox {
-  margin: var(--margin);
-  object-fit: scale-down;
-  clear: both;
-}
-
-.textbox:last-child {
-  margin-bottom: 0;
-}
-
-
-.textbox__imageL {
-  max-width: calc(100% / 3);
-  float: left;
-  margin: 0 15px 10px 0;
-  
-}
-
-.textbox__text {
-  overflow: hidden;
-}
-
-.textbox__text img {
-  width: 100%;
-}
-
-/* new shyt */
+/*Headlines-----------------------------------------------------------------------------*/
 
 
 .article .thumbnail {
@@ -173,6 +131,124 @@ a:hover {
   padding: var(--padding);
 }
 
+
+/*Log*/
+
+/*Rabbit holes aka
+Krisipedia ------------------------------------------------------------------------------*/
+:root {
+  --linecolor: rgb(218, 218, 218);
+}
+
+.krisipedia {
+  background-color: white;
+  margin: var(--margin);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.krisipedia .logo {
+  width: 150px;
+}
+
+.krisipedia .article {
+  margin-bottom: 30px;
+  height: auto;
+}
+
+.krisipedia .heading {
+  font-size: 1.3em;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  height: auto;
+  padding-bottom: 10px;
+  line-height: 1.1em;
+}
+
+.krisipedia .heading::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: var(--linecolor);
+}
+
+table {
+  width: calc(100% / 3);
+
+}
+
+th, td, tr {
+  vertical-align: top;
+  text-align: left;
+}
+
+.L {
+  margin-right: 15px;
+  float: left;
+}
+
+.R {
+  margin-left: 15px;
+  float: right;
+}
+
+.tablewrapper {
+  width: 100%;
+}
+
+.infobox {
+  padding: 1px;
+  background-color: rgb(246, 246, 246);
+  outline: 1px solid var(--linecolor);
+  margin-bottom: 5px;
+}
+
+.krisipedia a {
+  color: black;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.krisipedia a::after {
+  content: '';
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-image: url(icons/open.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
+.krisipedia .content_text {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.krisipedia em {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.krisipedia .blockquote {
+  color: rgb(187, 187, 187);
+  font-style: italic;
+  margin: 15px 0 15px 15px;
+  padding-left: 10px;
+  border-left: 1px solid  rgb(187, 187, 187);
+  display: flow-root;
+}
+
+/**/
+a {
+  color: var(--secondarycolor);
+  font-weight: bold;
+  text-decoration: underline;
+  transition: 0.2s ease-in-out;
+  text-underline-offset: 2px;
+}
 
 /* Street line page css */
 
@@ -253,19 +329,18 @@ a:hover {
   filter: brightness(1);
 }
 
+/*ABOUT ME PAGE*/
 .aboutme {
-  background-color: rgb(255, 103, 27);
   color: rgb(0, 0, 0);
   height: 100vh;
+  overflow: scroll;
 }
 
 .aboutme .header {
-  background-color: var(--black);
-  height: 50px;
 }
 .aboutme h1 {
   font-size: 1.5em;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .aboutme .content {
