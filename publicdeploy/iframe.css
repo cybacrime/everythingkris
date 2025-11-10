@@ -298,8 +298,12 @@ a {
 }
     
 
-.neighbor_container:nth-child(n+2):nth-child(-n+6) {
+.neighbor_container {
   margin-top: var(--mapmargin);
+}
+
+.neighbor_container:first-child {
+  margin-top: 0;
 }
 
 /* marker */

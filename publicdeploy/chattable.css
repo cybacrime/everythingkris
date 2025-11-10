@@ -22,9 +22,9 @@ body {
 .allMessages {
  border-radius: 5px;
  font-family: Verdana, sans-serif;
- font-size: 6pt;
+ font-size: 7pt;
  width: calc(95% - 60px);
- padding: 10px;
+ padding: 5px;
  position: relative;
  border: solid 1px #000;
  margin-top: 5px;
