@@ -10,7 +10,7 @@ const banners = [
     { 
         image: 'rm94',
         url: 'https://rm94.neocities.org',
-        title: 'visit retromaster94!'
+        title: 'Visit Retromaster94!'
     },
     { 
         image: 'aftv',
@@ -23,13 +23,13 @@ const banners = [
         title: 'Waddle On!'
     },
     { 
-        image: 'ximbo',
-        url: 'https://www.ximbo.land/',
-        title: 'A strange place with awesome people!'
+        image: 'poptropica',
+        url: 'https://web.archive.org/web/20130517102622/http://www.poptropica.com/',
+        title: 'I miss you Poptropica!'
     }
 ];
 
-// Shuffle array using Fisher-Yates algorithm
+//bro used the Fisher-Yates algorithm to shuffle
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -38,15 +38,15 @@ function shuffleArray(array) {
     return array;
 }
 
-// Create a queue to track banner order
+// queue
 let bannerQueue = [];
 
 function getBannerFromQueue() {
-    // If queue is empty, refill it with a new shuffled order
+    // when queue over reshuffle
     if (bannerQueue.length === 0) {
-        bannerQueue = shuffleArray([...banners]); // Create new shuffled copy
+        bannerQueue = shuffleArray([...banners]); //new shuffle
     }
-    return bannerQueue.pop(); // Get next banner from queue
+    return bannerQueue.pop(); //next banner in queue
 }
 
 function bannersDisplay() {
