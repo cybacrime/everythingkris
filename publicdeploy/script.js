@@ -38,6 +38,7 @@ const topBanners = [
     },
     { 
         image: 'goto',
+        url: 'https://thehistoryoftheweb.com/goto-forgotten-search-engine/',
     },
     { 
         image: 'N3O',
