@@ -168,6 +168,8 @@ img {
   color: #abced4;
   font-weight: normal;
   align-self: flex-end;
+  text-align: end;
+  margin-left: 30px;
 }
 
 .log .entry {

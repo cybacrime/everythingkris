@@ -6,7 +6,8 @@
 }
 */
 
-const banners = [
+/* SQUARE BANNER ON ASIDE R */
+const squareBanners = [
     { 
         image: 'rm94',
         url: 'https://rm94.neocities.org',
@@ -29,6 +30,22 @@ const banners = [
     }
 ];
 
+/* RECTANGLE BANNER ON TOP */
+const topBanners = [
+    { 
+        image: 'roblox',
+        url: 'https://web.archive.org/web/20100309080934/http://www.roblox.com/',
+    },
+    { 
+        image: 'goto',
+    },
+    { 
+        image: 'N3O',
+        url: 'http://n3onexus.neocities.org/',
+    }
+    // Add more top banners here
+];
+
 //bro used the Fisher-Yates algorithm to shuffle
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -38,34 +55,62 @@ function shuffleArray(array) {
     return array;
 }
 
-// queue
-let bannerQueue = [];
+// Separate queues for each banner type
+let squareBannerQueue = [];
+let topBannerQueue = [];
 
-function getBannerFromQueue() {
+function getBannerFromQueue(queue, bannerArray) {
     // when queue over reshuffle
-    if (bannerQueue.length === 0) {
-        bannerQueue = shuffleArray([...banners]); //new shuffle
+    if (queue.length === 0) {
+        queue = shuffleArray([...bannerArray]); //new shuffle
     }
-    return bannerQueue.pop(); //next banner in queue
+    return queue.pop(); //next banner in queue
 }
 
-function bannersDisplay() {
-    const selected_banner = getBannerFromQueue();
+// SQUARE BANNER DISPLAY
+function squareBannersDisplay() {
+    const selected_banner = getBannerFromQueue(squareBannerQueue, squareBanners);
+    squareBannerQueue = squareBannerQueue.length === 0 ? shuffleArray([...squareBanners]) : squareBannerQueue;
+    const selected = squareBannerQueue.pop();
     
     // updates img
     const bannerImg = document.getElementById('banner');
-    bannerImg.src = `./banners_sqr/${selected_banner.image}.gif`;
-//    bannerImg.title = selected_banner.title;
-//i dont want to have tooltip so just putting it in a note for now    
+    if (bannerImg) {
+        bannerImg.src = `./banners_sqr/${selected.image}.gif`;
+    }
 
     // updates href link
     const bannerLink = document.getElementById('banner-link');
     if (bannerLink) {
-        bannerLink.href = selected_banner.url;
+        bannerLink.href = selected.url;
         bannerLink.target = '_blank';
     }
     
-    setTimeout(bannersDisplay, 20000);
+    setTimeout(squareBannersDisplay, 20000);
 }
 
-bannersDisplay();
+// TOP BANNER DISPLAY
+function topBannersDisplay() {
+    const selected_banner = getBannerFromQueue(topBannerQueue, topBanners);
+    topBannerQueue = topBannerQueue.length === 0 ? shuffleArray([...topBanners]) : topBannerQueue;
+    const selected = topBannerQueue.pop();
+    
+    // updates img - note: both the anchor and img have id="top_banner"
+    const topBannerImg = document.querySelector('#top_banner > img');
+    if (topBannerImg) {
+        topBannerImg.src = `./banners_rec/${selected.image}.gif`;
+    }
+
+    // updates href link
+    const topBannerLink = document.querySelector('a#top_banner');
+    if (topBannerLink) {
+        topBannerLink.href = selected.url;
+        topBannerLink.target = '_blank';
+    }
+    
+    setTimeout(topBannersDisplay, 20000);
+}
+
+// Start both banner cycles
+squareBannersDisplay();
+topBannersDisplay();
