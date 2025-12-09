@@ -355,6 +355,11 @@ a {
 
 /* marker */
 
+
+.button {
+  font-weight: bold;
+}
+
 .streetline .neighbor_container .button::before {
   left: -1px;
   top: 25px;

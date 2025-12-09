@@ -30,8 +30,8 @@ const squareBanners = [
     }
 ];
 
-/* RECTANGLE BANNER ON TOP */
-const topBanners = [
+/* RECTANGLE BANNER (BOTTOM BANNER 1) */
+const bottomBanner1 = [
     { 
         image: 'roblox',
         url: 'https://web.archive.org/web/20100309080934/http://www.roblox.com/',
@@ -44,7 +44,7 @@ const topBanners = [
         image: 'N3O',
         url: 'http://n3onexus.neocities.org/',
     }
-    // Add more top banners here
+    // Add more banners here
 ];
 
 //bro used the Fisher-Yates algorithm to shuffle
@@ -58,7 +58,7 @@ function shuffleArray(array) {
 
 // Separate queues for each banner type
 let squareBannerQueue = [];
-let topBannerQueue = [];
+let bottomBanner1Queue = [];
 
 function getBannerFromQueue(queue, bannerArray) {
     // when queue over reshuffle
@@ -75,13 +75,13 @@ function squareBannersDisplay() {
     const selected = squareBannerQueue.pop();
     
     // updates img
-    const bannerImg = document.getElementById('banner');
+    const bannerImg = document.getElementById('square-banner-img');
     if (bannerImg) {
         bannerImg.src = `./banners_sqr/${selected.image}.gif`;
     }
 
     // updates href link
-    const bannerLink = document.getElementById('banner-link');
+    const bannerLink = document.getElementById('square-banner-link');
     if (bannerLink) {
         bannerLink.href = selected.url;
         bannerLink.target = '_blank';
@@ -90,28 +90,28 @@ function squareBannersDisplay() {
     setTimeout(squareBannersDisplay, 20000);
 }
 
-// TOP BANNER DISPLAY
-function topBannersDisplay() {
-    const selected_banner = getBannerFromQueue(topBannerQueue, topBanners);
-    topBannerQueue = topBannerQueue.length === 0 ? shuffleArray([...topBanners]) : topBannerQueue;
-    const selected = topBannerQueue.pop();
+// BOTTOM BANNER 1 DISPLAY
+function bottomBanner1Display() {
+    const selected_banner = getBannerFromQueue(bottomBanner1Queue, bottomBanner1);
+    bottomBanner1Queue = bottomBanner1Queue.length === 0 ? shuffleArray([...bottomBanner1]) : bottomBanner1Queue;
+    const selected = bottomBanner1Queue.pop();
     
-    // updates img - note: both the anchor and img have id="top_banner"
-    const topBannerImg = document.querySelector('#top_banner > img');
-    if (topBannerImg) {
-        topBannerImg.src = `./banners_rec/${selected.image}.gif`;
+    // updates img
+    const bottomBannerImg = document.getElementById('bottom-banner-1-img');
+    if (bottomBannerImg) {
+        bottomBannerImg.src = `./banners_rec/${selected.image}.gif`;
     }
 
     // updates href link
-    const topBannerLink = document.querySelector('a#top_banner');
-    if (topBannerLink) {
-        topBannerLink.href = selected.url;
-        topBannerLink.target = '_blank';
+    const bottomBannerLink = document.getElementById('bottom-banner-1-link');
+    if (bottomBannerLink) {
+        bottomBannerLink.href = selected.url;
+        bottomBannerLink.target = '_blank';
     }
     
-    setTimeout(topBannersDisplay, 20000);
+    setTimeout(bottomBanner1Display, 20000);
 }
 
 // Start both banner cycles
 squareBannersDisplay();
-topBannersDisplay();
+bottomBanner1Display();
