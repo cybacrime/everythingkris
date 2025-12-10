@@ -66,10 +66,6 @@ img {
 
 /* span*/
 
-.star {
-  color: var(--secondarycolor);
-}
-
 /* layout */
 .viewport {
   display: flex;
